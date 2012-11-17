@@ -3,12 +3,33 @@
 <head>
   <title>Nostradamus</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "layout", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="header">
+	<center>Nostradamus</center>
+</div>
+<div class="colmask leftmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+			<%= yield %>
+			<!-- Column 1 end -->
+		</div>
+		<div class="col2">
 
-<%= yield %>
+			<!-- Column 2 start -->
+			<h3>Menu</h3>
+			<!-- Column 2 end -->
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>This page uses the <a href="http://matthewjamestaylor.com/blog/perfect-2-column-left-menu.htm">Perfect 'Left Menu' 2 Column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
+</div>
+
 
 </body>
 </html>
