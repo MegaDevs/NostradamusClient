@@ -15,3 +15,8 @@
 //= require_tree .
 //= require building
 //= require jquery-ui-1.9.1.custom.min
+
+function roundNumber(num, dec) {
+	var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+	return result;
+}

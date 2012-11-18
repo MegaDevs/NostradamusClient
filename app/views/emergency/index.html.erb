@@ -1,24 +1,26 @@
-<h1>Informazioni di emergenza</h1>
+<h1 class="title">Informazioni di emergenza</h1>
 <script type="text/javascript">
 
 function graphElementWithValues(values){
+	WIDTH = 400;
 
-	risk_level = values["risk_level"] * 450;
-	police = values["police"] * 450;
-	firefighters = values["firefighters"] * 450;
-	soldiers = values["soldiers"]  * 450;
-	civil_defence = values["civil_defence"]  * 450;
-	ambulance = values["ambulance"]  * 450;
+	risk_level = values["risk_level"] * WIDTH;
+	police = values["police"] * WIDTH;
+	firefighters = values["firefighters"] * WIDTH;
+	soldiers = values["soldiers"]  * WIDTH;
+	civil_defence = values["civil_defence"]  * WIDTH;
+	ambulance = values["ambulance"]  * WIDTH;
 
 	risk_color = risk_level > .5 * 450 ? "red" : "green";
 
 	var graph = '<div class="city_graph">\
-					<div class="risk_level bar" style="width: ' + risk_level + 'px; background-color: ' + risk_color + '"></div>\
-					<div class="police needed_res_bar bar" style="width: ' + police + 'px"></div>\
-					<div class="firefighters needed_res_bar bar" style="width: ' + firefighters + 'px"></div>\
-					<div class="soldiers needed_res_bar bar" style="width: ' + soldiers + 'px"></div>\
-					<div class="ambulance needed_res_bar bar" style="width: ' + ambulance + 'px"></div>\
-					<div class="civil_defence needed_res_bar bar" style="width: ' + civil_defence + 'px"></div>\
+					<h2>whymca-padiglione2</h1>\
+					<div class="risk_level bar" style="width: ' + risk_level + 'px; background-color: ' + risk_color + '"><h2>' + roundNumber(values["risk_level"] * 100.0, 2) + '%</h2></div><br/>\
+					<%= image_tag "police_icon.png", :width => 20 %><div class="police needed_res_bar bar" style="width: ' + police + 'px">' + roundNumber(values["risk_level"] * 100.0, 2) + '%</div><br/>\
+					<%= image_tag "fire_fighter_icon.png", :width => 20 %><div class="firefighters needed_res_bar bar" style="width: ' + firefighters + 'px">' + roundNumber(values["firefighters"] * 100.0, 2) + '%</div><br/>\
+					<%= image_tag "esercito_icon.png", :width => 20 %><div class="soldiers needed_res_bar bar" style="width: ' + soldiers + 'px">' + roundNumber(values["soldiers"] * 100.0, 2) + '%</div><br/>\
+					<%= image_tag "croce_rossa_italiana_icon.jpg", :width => 20 %><div class="ambulance needed_res_bar bar" style="width: ' + ambulance + 'px">' + roundNumber(values["ambulance"], 2) * 100.0 + '%</div><br/>\
+					<%= image_tag "civil_defence_icon.png", :width => 20 %><div class="civil_defence needed_res_bar bar" style="width: ' + civil_defence + 'px">' + roundNumber(values["civil_defence"] * 100.0, 2) + '%</div><br/>\
 				</div>';
 
 	return graph;
@@ -34,7 +36,7 @@ function loadInfo(){
 			values['soldiers'] = json["Necessità di Esercito"];
 			values['ambulance'] = json["Necessità di Croce Rossa"];
 			values['civil_defence'] = json["Necessità di Protezione Civile"];
-			
+
 			$("#infos").append("<div class='city_info' id='"+ json.id + "'>" + graphElementWithValues(values) + "</div>");
 		//}
 	});
