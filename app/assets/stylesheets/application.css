@@ -21,3 +21,7 @@
 	top: 70px !important;
 	position: absolute;
 }
+
+#header center img {
+	margin-top:0px !important;
+}

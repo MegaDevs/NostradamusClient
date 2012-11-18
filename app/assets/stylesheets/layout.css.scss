@@ -123,18 +123,38 @@ img {
 /* 2 Column (left menu) settings */
 .leftmenu {
 	background:#fff;		/* right column background colour */
+	min-height: 500px;
+	float: right;
+	width: 1040px;
 }
 .leftmenu .colleft {
 	right:75%;			/* right column width */
-	background:#f4f4f4;	/* left column background colour */
+	background:#ffffff;	/* left column background colour */
 }
 .leftmenu .col1 {
 	width:71%;			/* right column content width */
 	left:102%;			/* 100% plus left column left padding */
 }
 .leftmenu .col2 {
+	height: 556px;
 	width:21%;			/* left column content width (column width minus left and right padding) */
 	left:6%;			/* (right column left and right padding) plus (left column left padding) */
+	background: url(image_path('menu_left_back.png')) no-repeat top left;
+	margin-right: 10px;
+	padding-right: 40px;
+}
+
+.leftmenu .col1 .content-top {
+	padding-left: 40px;
+	padding-top: 5px;
+	padding-bottom: 40px;
+	margin-bottom: 0px;
+	min-height: 462px;
+	background: url(image_path('content_top.png')) no-repeat top left;
+}
+.leftmenu .col1 .content-bottom {
+	height: 50px;
+	background: url(image_path('content_bottom.png')) no-repeat top left;
 }
 /* Footer styles */
 #footer {

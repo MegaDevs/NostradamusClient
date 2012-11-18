@@ -9,13 +9,17 @@
 </head>
 <body>
 <div id="header">
-	<center><%= image_tag "logo.png" %></center>
+	<center><%= image_tag "banner.png" %></center>
 </div>
 <div class="colmask leftmenu">
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-			<%= yield %>
+			<div class="content-top">
+				<%= yield %>
+			</div>
+			<div class="content-bottom">
+			</div>
 			<!-- Column 1 end -->
 		</div>
 		<div class="col2">
