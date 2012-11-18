@@ -2,6 +2,8 @@
 function openCamera(city){
 	$("#dialogs").append("<div class='dialog' cameraID='" + city.id + "' id='dialog_" + city.id + "'><%=j render "camera" %></div>");
 	$("#dialog_" + city.id).dialog({ autoOpen: true});
+	$("#dialog_" + city.id).dialog( "option", "modal", true );
+	$("#dialog_" + city.id).dialog({ position: { my: "center", at: "top", of: window } });
 }
 
 function loadCameras(){

@@ -15,6 +15,8 @@ function loadSnapshot(cameraID){
 
   	$.getJSON('http://nostradamus-whymca.appspot.com/get_camera_snapshot?id=' + cameraID + '&callback=?', function(json) { 
   		$('#camera img').attr('src', json.snapshot); 	
-		if(PLAY) setTimeout('loadSnapshot()', 800);
+		if(PLAY){ 
+			setTimeout('loadSnapshot("' + cameraID + '")', 800);
+		}
 	});
 }
