@@ -10,8 +10,14 @@
 	margin: 0;
 }
 
+.city_graph h2 {
+	text-align: center;
+}
+
 .city_info {
 	width: 450px;
+	border: 1px solid darkGray;
+	padding-left: 5px;
 }
 
 
@@ -23,6 +29,18 @@
 	height: 17px;
 	border: 1px solid black;
 	text-indent: 5px;
+	background-color: #bababa !important;
+	color: black !important;
+}
+
+.bar.red {
+	border: 2px solid red !important;
+	font-weight: bold;
+}
+
+.bar.green {
+	border: 1px solid green !important;
+	ont-weight: normal;
 }
 
 .bar text {
@@ -30,8 +48,10 @@
 }
 
 .risk_level {
+	line-height: 13px;
 	height: 50px;
 	background-color: red;
+	margin-bottom: 20px;
 }
 
 .police {
@@ -44,7 +64,7 @@
 }
 
 .civil_defence {
-	background-color: #0066CC;
+	background-color: #b6ffb4;
 }
 
 .soldiers {
@@ -53,5 +73,5 @@
 }
 
 .ambulance {
-	background-color: yellow;
+	background-color: #ffe672;
 }
