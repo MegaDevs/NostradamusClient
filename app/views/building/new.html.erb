@@ -26,5 +26,5 @@ function sendForm(){
 	<%= label 'riskProb', 'Resoconto probabilistico pericolosità' %><br/>
 	<%= text_field_tag 'riskProb', '', :onfocus => "this.value=''", :class => "textfield_effect" %>
 	<br/><br/>
-	<span class="submitButton" onclick="sendForm();">Crea</span>
+	<a class="submitAnchor" href=#><span class="submitButton" onclick="sendForm();">Crea</span></a>
 </div>

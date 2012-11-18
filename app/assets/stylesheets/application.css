@@ -18,6 +18,18 @@
 	background-color: white;
 	padding: 5px;
 	cursor:hand;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	color: black;
+}
+
+.submitAnchor {
+	text-decoration: none;
+}
+
+.submitAnchor:hover {
+	background-color: : gray;
+	color: black;
 }
 
 /*.ui-dialog {
