@@ -1,0 +1,28 @@
+<script type="text/javascript">
+function openCamera(city){
+	$("#dialogs").append("<div cameraID='" + city.id + "' id='dialog_" + city.id + "'><%=j render "camera" %></div>");
+	$("#dialog_" + city.id).dialog({ autoOpen: true});
+}
+
+function loadCameras(){
+    $.getJSON("http://nostradamus-whymca.appspot.com/get_all_cameras?callback=?", function(json){
+		for (var i = 0; i < json.length; i++) {
+			$("#buildings").append("<li id='"+ json[i].id + "' title='"+ json[i].id +"' onclick='openCamera(this);''>" + json[i].id + "</li>");
+		}
+	});
+}
+
+$(document).ready(function(){
+	loadCameras();
+});
+
+</script>
+
+<h1>Camera</h1>
+
+<ul id="buildings">
+	<li id="whymca-padiglione2" title="City Test" onclick="openCamera(this);">City Test Building</li>
+</ul>
+
+<div id="dialogs">
+</div>

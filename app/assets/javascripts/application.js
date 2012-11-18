@@ -13,13 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require page1
-
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
+//= require building
+//= require jquery-ui-1.9.1.custom.min

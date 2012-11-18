@@ -2,10 +2,8 @@
 	<img src="http://judaspriest.com/photo/Nostradamus/AlbumCover/NostradamusAlbumCover400.jpg" />
 </div>
 
-<span onclick="setPlay(true)">PLAY</span>    <span onclick="setPlay(false)">STOP</span>
+<span onclick="play($(this).parent().attr('cameraID'))">PLAY</span>    <span onclick="stop()">STOP</span>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	setPlay(true);
-});
+ 
 </script>
