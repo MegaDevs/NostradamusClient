@@ -41,7 +41,12 @@
 body {
 	background-color: #f1efef !important;
 	font-family: 'Glegoo', serif;
+	height: 100%; margin: 0; padding: 0;
 }
+
+html { height: 100% }
+#map_canvas { height: 100% }
+
 
 .textfield_effect {
 /*we will first set the border styles.*/
