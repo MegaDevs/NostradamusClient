@@ -1,0 +1,30 @@
+<script type="text/javascript">
+
+    var PLAY;
+
+    function setPlay(flag){
+    	PLAY = flag;
+    	if(PLAY) loadSnapshot();
+    }
+
+    function loadSnapshot(){
+
+    	// user getJSON when API ready
+
+    	$.get('/home/index.html', function(json) { 
+			//$('#camera').attr("src", json.snapshot_url); 
+			
+			if(PLAY) setTimeout(800,loadSnapshot());
+		});
+	}
+
+	$(document).ready(function(){
+		setPlay(true);
+	});
+</script>
+
+<div id="camera">
+	<img src="http://judaspriest.com/photo/Nostradamus/AlbumCover/NostradamusAlbumCover400.jpg" />
+</div>
+
+<span onclick="setPlay(true)">PLAY</span>    <span onclick="setPlay(false)">STOP</span>
