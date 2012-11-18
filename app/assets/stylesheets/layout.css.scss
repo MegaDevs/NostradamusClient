@@ -98,6 +98,7 @@ img {
 }
 /* column container */
 .colmask {
+	background-color: #f1efef !important;
 	position:relative;	/* This fixes the IE7 overflow hidden bug */
 	clear:both;
 	float:left;
@@ -108,6 +109,7 @@ img {
 .colright,
 .colmid,
 .colleft {
+	background-color: #f1efef !important;
 	float:left;
 	width:100%;
 	position:relative;
@@ -115,6 +117,7 @@ img {
 .col1,
 .col2,
 .col3 {
+	background-color: #f1efef !important;
 	float:left;
 	position:relative;
 	padding:0 0 1em 0;
@@ -122,14 +125,14 @@ img {
 }
 /* 2 Column (left menu) settings */
 .leftmenu {
-	background:#fff;		/* right column background colour */
+	background-color: #f1efef !important;
 	min-height: 500px;
 	float: right;
 	width: 1040px;
 }
 .leftmenu .colleft {
 	right:75%;			/* right column width */
-	background:#ffffff;	/* left column background colour */
+	background-color: #f1efef !important;
 }
 .leftmenu .col1 {
 	width:71%;			/* right column content width */
