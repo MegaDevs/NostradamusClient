@@ -156,6 +156,31 @@ img {
 	height: 50px;
 	background: url(image_path('content_bottom.png')) no-repeat top left;
 }
+
+ul {
+	list-style: none;
+}
+
+ul.vertical_menu li {
+	text-transform: uppercase;
+	text-decoration: underline;
+	margin-top: 20px;
+}
+
+li.red, li.red a {
+	color: #fa1515;
+}
+
+ul.submenu li{
+	margin-top: 8px;
+	text-transform: capitalize;
+}
+
+li.grey a{
+	color: #515152;
+	text-decoration: none;
+}
+
 /* Footer styles */
 #footer {
 	clear:both;
