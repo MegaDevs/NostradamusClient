@@ -1,0 +1,30 @@
+<script type="text/javascript">
+function sendForm(){
+	location = $("#location").text();
+	latitude = $("#latitude").text();
+	longitude = $("#longitudine").text();
+	ipcam = $("#ipcam").text();
+	riskProb = $("#riskProb").text();
+
+	resource = "http://nostradamus-whymca.appspot.com/create_building?location=" + location + "&latitude=" + latitude + "&ipcam=" + ipcam + "&irskProb=" + riskProb + "&callback=?";
+	alert("Creazione");
+    $.getJSON(resource, function(json){
+		alert("Struttura creata con successo");
+	});
+}
+</script>
+
+<div class="form">
+	<%= label 'location', 'Location' %>
+	<%= text_field_tag 'location', 'Location' %><br/>
+	<%= label 'latitude', 'Latitudine' %>
+	<%= text_field_tag 'latitude', 'Latitudine' %><br/>
+	<%= label 'longitude', 'Longitudine' %>
+	<%= text_field_tag 'longitude', 'Longitudine' %><br/>
+	<%= label 'ipcam', 'IP Cam' %>
+	<%= text_field_tag 'ipcam', 'IP Cam' %><br/>
+	<%= label 'riskProb', 'Resoconto probabilistico pericolosità' %>
+	<%= text_field_tag 'riskProb', 'Resoconto probabilistico pericolosità' %>
+	<br/><br/>
+	<span class="submitButton" onclick="sendForm();">Crea</span>
+</div>

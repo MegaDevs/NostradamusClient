@@ -1,5 +1,9 @@
 <ul class="vertical_menu">
-	<li><%= link_to 'Camera', building_index_path %></li>
-	<li><%= link_to 'Faces', page2_index_path %></li>
-	<li>Stuff</li>
+	<li>Strutture ed edifici
+		<ul>
+			<li><%= link_to 'Visualizza edifici', building_index_path %>
+			<li><%= link_to 'Aggiungi edificio', building_new_path %>
+		</ul>
+	</li>
+	<li><%= link_to 'Emergenza', emergency_index_path %></li>
 </ul>

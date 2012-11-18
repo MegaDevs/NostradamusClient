@@ -1,3 +1,41 @@
 // Place all the styles related to the emergency controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.city_graph {
+	width: 500px;
+	height: 1000px;
+}
+
+.city_info {
+	width: 500px;
+}
+
+.risk_level {
+	height: 50px;
+	background-color: red;
+}
+
+.police {
+	height: 20px;
+	background-color: blue;
+}
+
+.firefighters {
+	height: 20px;
+	background-color: #FF6600;
+}
+
+.civil_defence {
+	height: 20px;
+	background-color: #0066CC;
+}
+
+.soldiers {
+	height: 20px;
+	background-color: #003300;
+}
+
+.ambulance {
+	height: 20px;
+	background-color: yellow;
+}

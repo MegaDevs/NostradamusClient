@@ -1,4 +1,7 @@
 class BuildingController < ApplicationController
-  def index
-  end
+ 	def index
+  	end
+
+	def new
+	end
 end

@@ -1,6 +1,6 @@
 <script type="text/javascript">
 function openCamera(city){
-	$("#dialogs").append("<div cameraID='" + city.id + "' id='dialog_" + city.id + "'><%=j render "camera" %></div>");
+	$("#dialogs").append("<div class='dialog' cameraID='" + city.id + "' id='dialog_" + city.id + "'><%=j render "camera" %></div>");
 	$("#dialog_" + city.id).dialog({ autoOpen: true});
 }
 
@@ -18,10 +18,9 @@ $(document).ready(function(){
 
 </script>
 
-<h1>Camera</h1>
+<h1>Edifici</h1>
 
 <ul id="buildings">
-	<li id="whymca-padiglione2" title="City Test" onclick="openCamera(this);">City Test Building</li>
 </ul>
 
 <div id="dialogs">

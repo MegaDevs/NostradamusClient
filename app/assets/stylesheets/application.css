@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.submitButton {
+	border: 1px solid black;
+}
