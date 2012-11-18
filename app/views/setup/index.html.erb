@@ -1,4 +1,4 @@
-<h1>Modalità emergenza</h1>
+<h1 class="title">Modalità emergenza</h1>
 
 <script type="text/javascript">
 
@@ -27,11 +27,9 @@ function save(){
 	tornado = $("#tornadoCB select option:selected").val();
 	if (tornado != "undefined") params = params + "tornado=" + tornado + "&";
 
-	if(params.length > 1){
-		$.getJSON(url + params + "callback=?", function(json){
-			alert('Salvataggio avvenuto con suggesso');	
-		});
-	}
+	$.getJSON(url + params + "callback=?", function(json){
+		alert('Salvataggio avvenuto con suggesso');	
+	});
 }
 
 function loadSetup(){
