@@ -20,10 +20,14 @@
 	cursor:hand;
 }
 
-.ui-dialog {
+/*.ui-dialog {
 	left: 230px !important;
 	top: 70px !important;
 	position: absolute;
+}*/
+
+#dialog {
+	width: 790px;
 }
 
 #header center img {

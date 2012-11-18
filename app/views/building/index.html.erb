@@ -2,9 +2,7 @@
 <script type="text/javascript">
 function openCamera(city){
 	$("#dialogs").append("<div class='dialog' cameraID='" + city.id + "' id='dialog_" + city.id + "'><%=j render "camera" %></div>");
-	$("#dialog_" + city.id).dialog({ autoOpen: true});
-	$("#dialog_" + city.id).dialog( "option", "modal", true );
-	$("#dialog_" + city.id).dialog({ position: { my: "center", at: "top", of: window } });
+	$("#dialog_" + city.id).dialog({ autoOpen: true, width : 790, title : city.id, closeText : "Chiudi"});
 }
 
 function loadCameras(){
