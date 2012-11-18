@@ -15,16 +15,16 @@ function sendForm(){
 </script>
 
 <div class="form">
-	<%= label 'location', 'Location' %>
-	<%= text_field_tag 'location', 'Location' %><br/>
-	<%= label 'latitude', 'Latitudine' %>
-	<%= text_field_tag 'latitude', 'Latitudine' %><br/>
-	<%= label 'longitude', 'Longitudine' %>
-	<%= text_field_tag 'longitude', 'Longitudine' %><br/>
-	<%= label 'ipcam', 'IP Cam' %>
-	<%= text_field_tag 'ipcam', 'IP Cam' %><br/>
-	<%= label 'riskProb', 'Resoconto probabilistico pericolosità' %>
-	<%= text_field_tag 'riskProb', 'Resoconto probabilistico pericolosità' %>
+	<%= label 'location', 'Location' %><br/>
+	<%= text_field_tag 'location', '' %><br/><br/>
+	<%= label 'latitude', 'Latitudine' %><br/>
+	<%= text_field_tag 'latitude', '' %><br/><br/>
+	<%= label 'longitude', 'Longitudine' %><br/>
+	<%= text_field_tag 'longitude', '' %><br/><br/>
+	<%= label 'ipcam', 'IP Cam' %><br/>
+	<%= text_field_tag 'ipcam', '' %><br/><br/>
+	<%= label 'riskProb', 'Resoconto probabilistico pericolosità' %><br/>
+	<%= text_field_tag 'riskProb', '' %>
 	<br/><br/>
 	<span class="submitButton" onclick="sendForm();">Crea</span>
 </div>

@@ -2,12 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .city_graph {
-	width: 500px;
-	height: 1000px;
+	width: 450px;
 }
 
 .city_info {
 	width: 500px;
+}
+
+
+.bar {
+	margin-top: 5px;
+	height: 10px;
+	border: 1px solid black; 
 }
 
 .risk_level {
@@ -16,26 +22,21 @@
 }
 
 .police {
-	height: 20px;
 	background-color: blue;
 }
 
 .firefighters {
-	height: 20px;
 	background-color: #FF6600;
 }
 
 .civil_defence {
-	height: 20px;
 	background-color: #0066CC;
 }
 
 .soldiers {
-	height: 20px;
 	background-color: #003300;
 }
 
 .ambulance {
-	height: 20px;
 	background-color: yellow;
 }

@@ -1,0 +1,91 @@
+<h1>Modalità emergenza</h1>
+
+<script type="text/javascript">
+
+var options = [ "Sì", "No", "Undefined" ];
+
+function makeComboboxWithObject(obj){
+	$(obj).append("<select name='" + obj.id + "' id='" + obj.id + "'>\
+					<option value='true'>Sì</option>\
+					<option value='false'>No</option>\
+					<option value='undefined'>Undefined</option>\
+				   </select>");
+}
+
+function save(){
+	url = "http://nostradamus-whymca.appspot.com/set_disaster_status"
+
+	params = "?";
+	terremoto = $("#terremotoCB select option:selected").val();
+	if (terremoto != "undefined") params = params + "earthquake=" + terremoto + "&";
+	alluvione = $("#alluvioneCB select option:selected").val();
+	if (alluvione != "undefined") params = params + "flooding=" + alluvione + "&";
+	incendio = $("#incendioCB select option:selected").val();
+	if (incendio != "undefined") params = params + "fire=" + incendio + "&";
+	attaccoTerroristico = $("#attaccoTerroristicoCB select option:selected").val();
+	if (attaccoTerroristico != "undefined") params = params + "terrorism=" + attaccoTerroristico + "&";
+	tornado = $("#tornadoCB select option:selected").val();
+	if (tornado != "undefined") params = params + "tornado=" + tornado + "&";
+
+	if(params.length > 1){
+		$.getJSON(url + params + "callback=?", function(json){
+			alert('Salvataggio avvenuto con suggesso');	
+		});
+	}
+}
+
+function loadSetup(){
+
+	$.getJSON("http://nostradamus-whymca.appspot.com/get_disaster_status?callback=?", function(json){
+		for (var i = 0; i < json.length; i++) {
+			if (json[i].earthquake)
+				$('#terremotoCB option[value=' + json[i].earthquake + ']').attr('selected', 'selected');
+			if (json[i].fire)
+				$('#incendioCB option[value=' + json[i].fire + ']').attr('selected', 'selected');
+			if (json[i].flooding)
+				$('#alluvioneCB option[value=' + json[i].flooding + ']').attr('selected', 'selected');
+			if (json[i].terrorism)
+				$('#attaccoTerroristicoCB option[value=' + json[i].terrorism + ']').attr('selected', 'selected');
+			if (json[i].tornado){
+				$('#tornadoCB option[value=' + json[i].tornado + ']').attr('selected', 'selected');
+			}
+		}
+		
+		
+	});
+}
+
+$(document).ready(function(){
+	makeComboboxWithObject($("#terremotoCB"));
+	makeComboboxWithObject($("#alluvioneCB"));
+	makeComboboxWithObject($("#incendioCB"));
+	makeComboboxWithObject($("#attaccoTerroristicoCB"));
+	makeComboboxWithObject($("#tornadoCB"));
+
+	loadSetup();
+});
+
+</script>
+
+<div class="catastrophe">
+	<%= label 'terremotoLabel', 'Terremoto' %>
+	<div id="terremotoCB"></div>
+</div>
+<div class="catastrophe">
+	<%= label 'alluvioneLabel', 'Alluvione' %>
+	<div class="catastrophe_combo" id="alluvioneCB"></div>
+</div>
+<div class="catastrophe">
+	<%= label 'incendioLabel', 'Incendio' %>
+	<div class="catastrophe_combo" id="incendioCB"></div>
+</div>
+<div class="catastrophe">
+	<%= label 'attaccoTerroristicoLabel', 'Attacco Terroristico' %>
+	<div class="catastrophe_combo" id="attaccoTerroristicoCB"></div>
+</div>
+<div class="catastrophe last">
+	<%= label 'tornadoLabel', 'Tornado' %>
+	<div class="catastrophe_combo" id="tornadoCB"></div>
+</div>
+
+<span class="submitButton" onclick="save();">Salva</span>

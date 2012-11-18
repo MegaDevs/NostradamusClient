@@ -14,6 +14,10 @@
 
 .submitButton {
 	border: 1px solid black;
+	margin-top: 10px;
+	background-color: white;
+	padding: 5px;
+	cursor:hand;
 }
 
 .ui-dialog {
