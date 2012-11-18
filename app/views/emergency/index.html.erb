@@ -3,15 +3,17 @@
 
 function graphElementWithValues(values){
 
-	risk_level = values["risk_level"] / 100.0 * 450;
-	police = values["police"] / 100.0 * 450;
-	firefighters = values["firefighters"] / 100.0 * 450;
-	soldiers = values["soldiers"] / 100.0 * 500;
-	civil_defence = values["civil_defence"] / 100.0 * 450;
-	ambulance = values["ambulance"] / 100.0 * 450;
+	risk_level = values["risk_level"] * 450;
+	police = values["police"] * 450;
+	firefighters = values["firefighters"] * 450;
+	soldiers = values["soldiers"]  * 450;
+	civil_defence = values["civil_defence"]  * 450;
+	ambulance = values["ambulance"]  * 450;
 
-	var graph = '<div id="city_id" class="city_graph">\
-					<div class="risk_level bar" style="width: ' + risk_level + 'px"></div>\
+	risk_color = risk_level > .5 * 450 ? "red" : "green";
+
+	var graph = '<div class="city_graph">\
+					<div class="risk_level bar" style="width: ' + risk_level + 'px; background-color: ' + risk_color + '"></div>\
 					<div class="police needed_res_bar bar" style="width: ' + police + 'px"></div>\
 					<div class="firefighters needed_res_bar bar" style="width: ' + firefighters + 'px"></div>\
 					<div class="soldiers needed_res_bar bar" style="width: ' + soldiers + 'px"></div>\
@@ -23,18 +25,18 @@ function graphElementWithValues(values){
 
 }
 function loadInfo(){
-    $.getJSON("http://nostradamus-whymca.appspot.com/get_all_cameras?callback=?", function(json){
-		for (var i = 0; i < json.length; i++) {
+    $.getJSON("http://nostradamus-whymca.appspot.com/emergency_info?callback=?", function(json){
+    	//for (var i = 0; i < json.length; i++) { // We assume 1 for now
 			values = [];
-			values['risk_level'] = json.risk_level
-			values['police'] = json.police;
-			values['firefighters'] = json.firefighters;
-			values['soldiers'] = json.soldiers;
-			values['ambulance'] = json.ambulance;
-			values['civil_defence'] = json.civil_defence;
-
-			$("#infos").append("<div class='city_info' id='"+ json[i].id + "'>" + graphElementWithValues(values) + "</div>");
-		}
+			values['risk_level'] = json["Percentuale di emergenza"];
+			values['police'] = json["Necessità di Polizia"];
+			values['firefighters'] = json["Necessità di Pompieri"];
+			values['soldiers'] = json["Necessità di Esercito"];
+			values['ambulance'] = json["Necessità di Croce Rossa"];
+			values['civil_defence'] = json["Necessità di Protezione Civile"];
+			
+			$("#infos").append("<div class='city_info' id='"+ json.id + "'>" + graphElementWithValues(values) + "</div>");
+		//}
 	});
 }
 
