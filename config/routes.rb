@@ -1,4 +1,6 @@
 Nostradamus::Application.routes.draw do
+  get "page2/index"
+
   get "page1/index"
 
   get "home/index"

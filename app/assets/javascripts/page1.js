@@ -7,14 +7,8 @@ function setPlay(flag){
 
 function loadSnapshot(){
 
-  	// user getJSON when API ready
-  	$.get('/home/index.html', function(json) { 
-	//$('#camera').attr("src", json.snapshot_url); 
-			
-		if(PLAY) setTimeout(1000,loadSnapshot());
+  	$.getJSON('http://nostradamus-whymca.appspot.com/get_camera_snapshot?id=whymca-padiglione2&callback=?', function(json) { 
+  		$('#camera img').attr('src', json.snapshot); 	
+		if(PLAY) setTimeout('loadSnapshot()', 800);
 	});
 }
-
-$(document).ready(function(){
-	setPlay(true);
-});
