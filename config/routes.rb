@@ -1,4 +1,6 @@
 Nostradamus::Application.routes.draw do
+  get "users/index"
+
   get "setup/index"
 
   get "emergency/index"

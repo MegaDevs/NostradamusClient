@@ -16,15 +16,15 @@ function sendForm(){
 
 <div class="form">
 	<%= label 'location', 'Location' %><br/>
-	<%= text_field_tag 'location', '' %><br/><br/>
+	<%= text_field_tag 'location', '', :onfocus => "this.value=''", :class => "textfield_effect" %><br/><br/>
 	<%= label 'latitude', 'Latitudine' %><br/>
-	<%= text_field_tag 'latitude', '' %><br/><br/>
+	<%= text_field_tag 'latitude', '', :onfocus => "this.value=''", :class => "textfield_effect"  %><br/><br/>
 	<%= label 'longitude', 'Longitudine' %><br/>
-	<%= text_field_tag 'longitude', '' %><br/><br/>
+	<%= text_field_tag 'longitude', '', :onfocus => "this.value=''", :class => "textfield_effect" %><br/><br/>
 	<%= label 'ipcam', 'IP Cam' %><br/>
-	<%= text_field_tag 'ipcam', '' %><br/><br/>
+	<%= text_field_tag 'ipcam', '', :onfocus => "this.value=''", :class => "textfield_effect" %><br/><br/>
 	<%= label 'riskProb', 'Resoconto probabilistico pericolosità' %><br/>
-	<%= text_field_tag 'riskProb', '' %>
+	<%= text_field_tag 'riskProb', '', :onfocus => "this.value=''", :class => "textfield_effect" %>
 	<br/><br/>
 	<span class="submitButton" onclick="sendForm();">Crea</span>
 </div>

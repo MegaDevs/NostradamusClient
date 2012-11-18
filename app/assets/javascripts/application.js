@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require building
+//= require users
 //= require jquery-ui-1.9.1.custom.min
 
 function roundNumber(num, dec) {
