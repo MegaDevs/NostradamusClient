@@ -1,3 +1,4 @@
+<h1 class="title">Inserisci una nuova struttura</h1>
 <script type="text/javascript">
 function sendForm(){
 	location = $("#location").text();
@@ -7,8 +8,7 @@ function sendForm(){
 	riskProb = $("#riskProb").text();
 
 	resource = "http://nostradamus-whymca.appspot.com/create_building?location=" + location + "&latitude=" + latitude + "&ipcam=" + ipcam + "&irskProb=" + riskProb + "&callback=?";
-	alert("Creazione");
-    $.getJSON(resource, function(json){
+	$.getJSON(resource, function(json){
 		alert("Struttura creata con successo");
 	});
 }
@@ -26,5 +26,5 @@ function sendForm(){
 	<%= label 'riskProb', 'Resoconto probabilistico pericolosità' %><br/>
 	<%= text_field_tag 'riskProb', '', :onfocus => "this.value=''", :class => "textfield_effect" %>
 	<br/><br/>
-	<a class="submitAnchor" href=#><span class="submitButton" onclick="sendForm();">Crea</span></a>
+	<a class="submitAnchor" href=#><span id="createButton" class="submitButton" onclick="sendForm();">Crea</span></a>
 </div>

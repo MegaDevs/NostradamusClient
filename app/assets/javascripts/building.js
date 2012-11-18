@@ -4,11 +4,15 @@ var PLAY;
 
 function play(cameraID){
   	PLAY = true;
+  	$("#playButton").css("background-color", "lightGray");
+  	$("#stopButton").css("background-color", "white");
    	if(PLAY) loadSnapshot(cameraID);
 }
 
 function stop(){
 	PLAY = false;
+	 $("#playButton").css("background-color", "white");
+  	$("#stopButton").css("background-color", "lightGray");
 }
 
 function loadSnapshot(cameraID){

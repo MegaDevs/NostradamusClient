@@ -13,6 +13,7 @@
  */
 
 .submitButton {
+	display : block;
 	border: 1px solid black;
 	margin-top: 10px;
 	background-color: white;
@@ -21,6 +22,14 @@
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	color: black;
+}
+
+.submitButton:hover {
+	background-color: darkGray;
+}
+
+.submitButton:click {
+
 }
 
 .submitAnchor {

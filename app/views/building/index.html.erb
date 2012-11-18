@@ -8,7 +8,7 @@ function openCamera(city){
 function loadCameras(){
     $.getJSON("http://nostradamus-whymca.appspot.com/get_all_cameras?callback=?", function(json){
 		for (var i = 0; i < json.length; i++) {
-			$("#buildings").append("<li id='"+ json[i].id + "' title='"+ json[i].id +"' onclick='openCamera(this); play(\"" + json[i].id + "\");'>" + json[i].id + "</li>");
+			$("#buildings").append("<li id='"+ json[i].id + "' title='"+ json[i].id +"' onclick='openCamera(this); play(\"" + json[i].id + "\");'><a href=#>" + json[i].id + "</a></li>");
 		}
 	});
 }
